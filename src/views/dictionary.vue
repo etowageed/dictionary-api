@@ -16,10 +16,12 @@
             </select>
             <!-- <hr class="w-8 rotate-90"> -->
             <div class="line border mx-5"></div>
+
             <label class="switch ml-3">
                 <input type="checkbox">
                 <span class="slider round"></span>
             </label>
+
 
             <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36"
                 class="scale-x-[-1] -rotate-45">
@@ -29,13 +31,21 @@
         </nav>
 
         <div id="search">
-            <input type="text" placeholder="Type a word to search">
+            <form action="" class="flex bg-slate-100 justify-between px-5 rounded-full" onsubmit="return false">
+                <input v-model="searchWord" type="search" placeholder="Type a word to search"
+                    class="border-none bg-transparent focus:outline-none w-1/2">
+                <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                        <path
+                            d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" />
+                    </svg></button>
+            </form>
         </div>
         <div id="dictionary">
-            <div id="word-audio-section">
+            <!-- word section -->
+            <div id="word-audio-section" class="flex justify-between">
                 <div id="word">
-                    <h1 class="text-5xl md:text-7xl">Word</h1>
-                    <p></p>
+                    <h1 class="text-5xl md:text-5xl">Word</h1>
+                    <p>phonetic</p>
                 </div>
                 <div id="play-audio" class="">
                     <audio src=""></audio>
@@ -43,13 +53,89 @@
                 </div>
             </div>
 
+            <!-- divider section -->
+            <div id="divider" class="flex">
+                <div class="w-1/5">
+                    <p>Partofspeech</p>
+                </div>
+                <div class="w-4/5">
+                    <hr>
+                </div>
+            </div>
+
+            <!-- meaning section -->
+            <div class="meaning">
+                <p>meaning</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                </ul>
+
+                <p>Synonym</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                </ul>
+            </div>
+            <!-- divider section -->
+            <div id="divider" class="flex">
+                <div class="w-1/5">
+                    <p>Partofspeech</p>
+                </div>
+                <div class="w-4/5">
+                    <hr>
+                </div>
+            </div>
+
+            <div class="meaning">
+                <p>meaning</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem aliquid officia commodi repellendus
+                        esse vel libero saepe sapiente maiores.</li>
+                </ul>
+                <div id="synonyms">
+                    <span>synonyms</span><span>Synonym1, synonym2</span>
+                </div>
+
+
+            </div>
+            <p>Source</p>
+            <p><a href="https://en.wiktionary.org/wiki/hello" target="_blank">https://en.wiktionary.org/wiki/hello</a></p>
         </div>
 
 
     </div>
 </template>
 
-<script setup>
+<script>
+export default {
+    name: 'dictionary',
+    data() {
+        return {
+            model: {
+                input: ''
+            }
+        }
+    }
+}
 
 </script>
 
